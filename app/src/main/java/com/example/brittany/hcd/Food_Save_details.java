@@ -94,7 +94,7 @@ public class Food_Save_details extends AppCompatActivity {
             // Get the date made, turn into nice string
             // http://stackoverflow.com/questions/9629636/get-todays-date-in-java-at-midnight-time
             Date date = new Date();
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+            SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm");
 
             // PREF
             SharedPreferences prefs = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
