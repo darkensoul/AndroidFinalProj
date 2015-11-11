@@ -136,10 +136,10 @@
         <activity
             android:name=".Heart_rate_monitor_firstscreen"
             android:label="@string/title_activity_heart_rate_monitor_firstscreen"
-            android:parentActivityName=".User_add_exercise" >
+            android:parentActivityName=".Heartrate_details" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.brittany.hcd.User_add_exercise" />
+                android:value="com.example.brittany.hcd.Heartrate_details" />
         </activity>
         <activity
             android:name=".Loading_screen_Bioharness"
@@ -148,10 +148,10 @@
         <activity
             android:name=".heart_rate_display"
             android:label="@string/title_activity_heart_rate_display"
-            android:parentActivityName=".User_add_exercise" >
+            android:parentActivityName=".Heartrate_details" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.brittany.hcd.User_add_exercise" />
+                android:value="com.example.brittany.hcd.Heartrate_details" />
         </activity>
         <activity
             android:name=".Workout_overview"
@@ -204,11 +204,27 @@
         <activity
             android:name=".Symptom_entry_list"
             android:label="@string/title_activity_symptom_entry_list"
-            android:parentActivityName=".Symptom_overview"
-            >
+            android:parentActivityName=".Symptom_overview" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.brittany.hcd.Symptom_overview" />
         </activity>
+        <activity
+            android:name=".Heartrate_details"
+            android:label="@string/title_activity_heartrate_details"
+            android:parentActivityName=".UserMainPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.brittany.hcd.UserMainPage" />
+        </activity>
+        <activity
+            android:name=".HeartRate_information"
+            android:label="@string/title_activity_heart_rate_information"
+            android:parentActivityName=".Heartrate_details" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.brittany.hcd.Heartrate_details" />
+        </activity>
     </application>
+
 </manifest>

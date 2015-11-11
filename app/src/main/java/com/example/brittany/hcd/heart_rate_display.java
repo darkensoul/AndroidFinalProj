@@ -222,7 +222,7 @@ public class heart_rate_display extends AppCompatActivity {
                     dig.setMessage("Disconnected from BioHarness!");
                     dig.show();
                     Toast.makeText(heart_rate_display.this,"Disconnected from BioHarness!",Toast.LENGTH_SHORT).show();
-                    Intent intent_Bioharness = new Intent(heart_rate_display.this, User_add_exercise.class);
+                    Intent intent_Bioharness = new Intent(heart_rate_display.this, Heartrate_details.class);
                     startActivity(intent_Bioharness);
 
                 }
