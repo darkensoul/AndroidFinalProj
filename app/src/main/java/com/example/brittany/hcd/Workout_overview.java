@@ -1,7 +1,9 @@
 package com.example.brittany.hcd;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,11 +32,16 @@ public class Workout_overview extends AppCompatActivity {
     List<ParseObject> ob;
     ProgressDialog mProgressDialog;
     ArrayAdapter<String> adapter;
+    String _username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_overview);
+        // PREF
+        SharedPreferences prefs = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        _username = prefs.getString("username","");
+
         new RemoteDataTask().execute();
     }
 
@@ -79,6 +86,7 @@ public class Workout_overview extends AppCompatActivity {
             try {
                 query.whereGreaterThan("createdAt", midnight);
                 query.whereLessThan("createdAt", beforemidnight);
+                query.whereEqualTo("username", _username);
                 ob = query.find();
             } catch (ParseException e) {
                 Log.e("Error", e.getMessage());
