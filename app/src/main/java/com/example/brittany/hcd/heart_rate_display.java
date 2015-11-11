@@ -1,5 +1,6 @@
 package com.example.brittany.hcd;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 //import android.support.design.widget.FloatingActionButton;
 //import android.support.design.widget.Snackbar;
@@ -212,9 +213,17 @@ public class heart_rate_display extends AppCompatActivity {
                     tv.setText(ErrorText);
 
 					/*This disconnects listener from acting on received messages*/
-                    _bt.removeConnectedEventListener(_NConnListener);
+                   // _bt.removeConnectedEventListener(_NConnListener);
 					/*Close the communication with the device & throw an exception if failure*/
                     _bt.Close();
+
+                    final ProgressDialog dig = new ProgressDialog(heart_rate_display.this);
+                    dig.setTitle("Disconnect BioHarness.");
+                    dig.setMessage("Disconnected from BioHarness!");
+                    dig.show();
+                    Toast.makeText(heart_rate_display.this,"Disconnected from BioHarness!",Toast.LENGTH_SHORT).show();
+                    Intent intent_Bioharness = new Intent(heart_rate_display.this, User_add_exercise.class);
+                    startActivity(intent_Bioharness);
 
                 }
             });
