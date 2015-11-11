@@ -1,0 +1,125 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:weightSum="1"
+    android:paddingTop="0dp">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:id="@+id/imageView"
+        android:src = "@drawable/login"
+        android:layout_margin="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:contentDescription="logo"
+        android:layout_gravity="top"
+        android:background="#b8e537" />
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:layout_gravity="left"
+        android:background="#881cbc"
+        android:layout_marginBottom="5dp">
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:text="Login"
+            android:id="@+id/textView_user"
+            android:hint="@string/Username"
+            android:textSize="12pt"
+            android:textColor="#ffffff"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_marginLeft="10dp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Account"
+            android:id="@+id/button5"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:onClick="Create_account_click"/>
+    </GridLayout>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:columnCount="4"
+        android:rowCount="4"
+        android:layout_gravity="left">
+
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:text="Username:"
+            android:id="@+id/textView"
+            android:hint="@string/Username"
+            android:textSize="12pt"
+            android:textColor="#ffffff"
+            android:background="#8e7fff"
+
+            android:layout_row="1"
+            android:layout_column="1" />
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:background="#8e7fff"
+            android:id="@+id/username"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_gravity="top" />
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:text="Password:"
+            android:id="@+id/textView1"
+            android:textColor="#ffffff"
+            android:hint="@string/Password"
+            android:textSize="12pt"
+            android:background="#40b953"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_marginTop="5dp" />
+
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/password"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:background="#40b953"
+            android:layout_gravity="top"
+            android:layout_marginTop="5dp" />
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:text="Login"
+            android:id="@+id/button"
+            android:textColor="#ffffff"
+            android:layout_rowSpan="2"
+            android:hint="@string/Login"
+            android:background="#67daff"
+            android:textSize="10pt"
+            android:layout_row="1"
+            android:layout_column="3"
+            android:onClick="Login_clicked"
+            android:layout_marginLeft="3dp" />
+    </GridLayout>
+</LinearLayout>

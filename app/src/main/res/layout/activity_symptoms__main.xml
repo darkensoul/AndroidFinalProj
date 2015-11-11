@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.brittany.hcd.Symptoms_Main"
+     android:orientation="vertical"
+>
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="132dp"
+        android:text="Symptoms Diary"
+        android:id="@+id/SHeading"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#40b953"
+        android:textSize="14pt"
+        android:textColor="#ffffff"
+        android:paddingLeft="60dp"
+        android:textAlignment="center"
+        android:paddingTop="50dp" />
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Create"
+        android:id="@+id/screate"
+        android:layout_weight="0.20"
+        android:background="#2ca5ee"
+        android:textSize="12pt"
+        android:textColor="#ffffff"
+        android:paddingLeft="-190dp"
+        android:onClick="Create_clicked"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Overview"
+        android:id="@+id/overview"
+        android:layout_weight="0.20"
+        android:background="#686293"
+        android:textSize="12pt"
+        android:textColor="#ffffff"
+        android:paddingLeft="-100dp"
+        android:onClick="Overview_clicked"
+        android:layout_marginBottom="5dp" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/blank"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#40b953"
+        android:textSize="12pt"
+        android:textColor="#ffffff"
+        android:paddingLeft="0dp"
+        android:layout_weight="0.53" />
+</LinearLayout>

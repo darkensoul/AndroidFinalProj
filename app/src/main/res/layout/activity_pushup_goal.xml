@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.brittany.hcd.Pushup_goal"
+    android:background="#2ca5ee">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Push-Up Counter"
+        android:id="@+id/textView5"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="18pt"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp" />
+
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_row="1"
+        android:layout_column="2"
+        android:layout_marginTop="100dp"
+        android:id="@+id/gridLayout">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter your goal: "
+            android:id="@+id/textView6"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="16pt"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="30dp" />
+
+        <EditText
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:inputType="number"
+            android:id="@+id/editText_goal"
+            android:layout_gravity="center_horizontal"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:textSize="40dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="-40dp" />
+
+    </GridLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/button2"
+        android:onClick="Goal_entered"
+        android:layout_below="@+id/gridLayout"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

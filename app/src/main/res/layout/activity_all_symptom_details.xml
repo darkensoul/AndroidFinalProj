@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.brittany.hcd.AllSymptom_details">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_row="3"
+        android:layout_column="4"
+        android:background="#40b953"
+        >
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:text="  Choose a Symptom for "
+            android:id="@+id/textView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="#40b953"
+            android:textSize="14pt"
+            android:textColor="#ffffff"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:textAlignment="center"
+            android:paddingTop="50dp" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12pt"
+            android:textColor="#ffffff"
+            android:text="'date'"
+            android:id="@+id/date"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:paddingLeft="90dp"/>
+
+
+    </GridLayout>
+
+
+</LinearLayout>

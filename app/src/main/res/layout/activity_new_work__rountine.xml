@@ -1,0 +1,90 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.brittany.hcd.New_work_Rountine"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="132dp"
+        android:text="New Workout Routine"
+        android:id="@+id/Routine"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#2ca5ee"
+        android:textSize="14pt"
+        android:textColor="#ffffff"
+        android:paddingLeft="20dp"
+        android:textAlignment="center"
+        android:paddingTop="50dp"
+        />
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_row="3"
+        android:layout_column="4"
+
+        android:background="#922eb5"
+        android:layout_weight="0.16"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name of New Routine:"
+            android:id="@+id/routine_name"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:textSize="12pt"
+            android:textColor="#ffffff"
+            android:layout_gravity="top"
+            android:textAlignment="center"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp" />
+
+        <EditText
+            android:layout_width="234dp"
+            android:layout_height="74dp"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/editText_routine"
+            android:layout_gravity="center_horizontal"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:background="#ffffff"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="0dp"
+            android:paddingTop="0dp"
+            android:layout_marginLeft="10dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:id="@+id/button4"
+            android:layout_row="1"
+            android:layout_column="4"
+            android:onClick="Create_click"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="-10dp" />
+    </GridLayout>
+
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/blank"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#2ca5ee"
+        android:textSize="12pt"
+        android:textColor="#ffffff"
+        android:paddingLeft="0dp"
+        android:layout_weight="0.81" />
+</LinearLayout>

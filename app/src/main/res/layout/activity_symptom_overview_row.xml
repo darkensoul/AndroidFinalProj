@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="5dp"
+    tools:context="com.example.brittany.hcd.Symptom_overview" android:background="#2ca5ee">
+
+    <TextView
+        android:id="@+id/dateView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"/>
+
+
+
+    <!-- <GridLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_row="5"
+         android:layout_column="5"
+         android:background="#2ca5ee"
+         android:paddingTop="20dp"
+         android:paddingLeft="20dp"
+         android:layout_alignParentTop="true"
+         android:layout_centerHorizontal="true">
+
+
+         <ImageButton
+             android:layout_width="50dp"
+             android:layout_height="50dp"
+             android:id="@+id/imageButton"
+             android:src="@drawable/edit_workout"
+             android:layout_row="0"
+             android:layout_column="0"
+             android:scaleType="fitCenter"
+             android:background="@null"
+             android:paddingBottom="10dp"
+             />
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:text="date"
+             android:id="@+id/dateView"
+             android:textSize="12pt"
+             android:textColor="#ffffff"
+             android:layout_row="0"
+             android:layout_column="3"
+             android:paddingLeft="40dp" />
+
+         <ImageButton
+             android:layout_width="50dp"
+             android:layout_height="50dp"
+             android:id="@+id/delete_symptom"
+             android:src="@drawable/delete_workout"
+             android:layout_row="0"
+             android:layout_column="5"
+             android:scaleType="fitCenter"
+             android:background="@null"
+             android:paddingBottom="10dp"
+             android:layout_marginRight="40dp"
+             />
+     </GridLayout> -->
+
+
+
+
+
+
+</RelativeLayout>

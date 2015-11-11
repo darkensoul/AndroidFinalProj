@@ -1,0 +1,201 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.brittany.hcd.User_add_exercise"
+    android:orientation="vertical">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="156dp"
+        android:layout_row="3"
+        android:layout_column="4"
+        android:background="#2ca5ee"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp">
+
+
+        <TextView
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Exercises for the "
+            android:id="@+id/text"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="#2ca5ee"
+            android:textSize="14pt"
+            android:textColor="#ffffff"
+            android:textAlignment="center"
+            android:paddingTop="0dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_rowSpan="2"
+            android:paddingLeft="40dp" />
+
+        <TextView
+            android:textSize="14pt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:textColor="#ffffff"
+            android:text="Default"
+            android:id="@+id/User_input_exercise"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:paddingLeft="65dp" />
+
+        <TextView
+            android:textSize="14pt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:textColor="#ffffff"
+            android:text="Routine"
+            android:id="@+id/textview1"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:paddingLeft="75dp" />
+
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_row="2"
+        android:layout_column="2"
+        android:background="#922eb5"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="5dp">
+
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imageButton"
+            android:src="@drawable/add_button_blue"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:onClick="Add_exercise_clicked"
+            android:scaleType="fitCenter"
+
+            android:background="@null"
+            android:paddingBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Add an exercise"
+            android:id="@+id/textView2"
+            android:textSize="12pt"
+            android:textColor="#ffffff"
+            android:layout_row="0"
+            android:layout_column="1" />
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_row="2"
+        android:layout_column="2"
+        android:background="#922eb5"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="5dp">
+
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:id="@+id/imageButton2"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:src="@drawable/add_button_blue"
+            android:onClick="Pushup_clicked"
+            android:scaleType="fitCenter"
+            android:paddingBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Add push-ups"
+            android:id="@+id/textView3"
+            android:textSize="12pt"
+            android:textColor="#ffffff"
+            android:layout_row="0"
+            android:layout_column="1" />
+    </GridLayout>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_row="2"
+        android:layout_column="2"
+        android:background="#922eb5"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imageButton3"
+            android:layout_row="0"
+            android:src="@drawable/add_button_blue"
+            android:layout_column="0"
+            android:onClick="Heartrate_clicked"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:paddingBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Add heart-rate"
+            android:id="@+id/textView4"
+            android:textSize="12pt"
+            android:textColor="#ffffff"
+            android:layout_row="0"
+            android:layout_column="1" />
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_row="2"
+        android:layout_column="2"
+        android:background="#922eb5"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp">
+
+        <Button
+            android:layout_width="220dp"
+            android:layout_height="fill_parent"
+            android:text="Go back to Workout "
+            android:textSize="8pt"
+            android:id="@+id/create_new_routine"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="-3dp"
+            android:onClick="create_new_routine"/>
+    </GridLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/blank"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#2ca5ee"
+        android:textSize="12pt"
+        android:textColor="#ffffff"
+        android:paddingLeft="0dp"
+        android:layout_weight="0.53"
+        android:layout_marginTop="5dp" />
+</LinearLayout>

@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.brittany.hcd.Workout_Main"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="132dp"
+        android:text="Workout Diary"
+        android:id="@+id/Wdiary"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#2ca5ee"
+        android:textSize="14pt"
+        android:textColor="#ffffff"
+        android:paddingLeft="60dp"
+        android:textAlignment="center"
+        android:paddingTop="50dp"
+        />
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Routines"
+        android:id="@+id/wcreate"
+        android:layout_weight="0.20"
+        android:background="#922eb5"
+        android:textSize="12pt"
+        android:textColor="#ffffff"
+        android:paddingLeft="-80dp"
+        android:layout_marginTop="5dp"
+        android:onClick="New_Routine_clicked"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="OverView"
+        android:id="@+id/woverview"
+        android:layout_weight="0.20"
+        android:background="#922eb5"
+        android:textSize="12pt"
+        android:textColor="#ffffff"
+        android:paddingLeft="-20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:onClick="overview_clicked"/>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/blank"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#2ca5ee"
+        android:textSize="12pt"
+        android:textColor="#ffffff"
+        android:paddingLeft="0dp"
+        android:layout_weight="0.53" />
+</LinearLayout>
