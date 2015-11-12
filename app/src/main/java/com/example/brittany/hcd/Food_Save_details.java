@@ -19,11 +19,10 @@ import com.parse.ParseObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Food_Save_details extends AppCompatActivity {
 
@@ -66,7 +65,9 @@ public class Food_Save_details extends AppCompatActivity {
         EditText name = (EditText)findViewById(R.id.nameText);
         EditText description = (EditText)findViewById(R.id.dText);
 
-        if(name != null && description != null){
+        String n = check(name.getText().toString());
+
+        if(n != null && description != null){
             // Create a New Class called "ImageUpload" in Parse
             ParseObject imgupload = new ParseObject("Food_Diary");
 
@@ -81,7 +82,7 @@ public class Food_Save_details extends AppCompatActivity {
 
             //insert parse function here
 
-            photoFile = new ParseFile(name.getText().toString()+".jpg", scaledData);
+            photoFile = new ParseFile(n+".jpg", scaledData);
             photoFile.saveInBackground();
 
             // Create a column named "ImageFile" and insert the image
@@ -113,6 +114,22 @@ public class Food_Save_details extends AppCompatActivity {
             Toast.makeText(Food_Save_details.this, "Image Uploaded",
                     Toast.LENGTH_SHORT).show();}
 
+    }
+
+    public String check(String fileName){
+
+        Pattern p = Pattern.compile("[^a-z0-9]", Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher(fileName);
+        boolean b = m.find();
+        if(b){
+            Toast.makeText(Food_Save_details.this, "DO NOT INPUT SPECIAL CHARACTERS",
+                    Toast.LENGTH_SHORT).show();
+            return null;
+        }
+
+        fileName.replaceAll("\\s+", "_");
+        Log.d("new", fileName);
+        return fileName;
     }
 
     @Override

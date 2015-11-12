@@ -26,6 +26,8 @@ public class Symptom_entry_list extends AppCompatActivity {
     ArrayList<String> titlesArray = new ArrayList<>();
     Symptom s;
 
+    ArrayList<Symptom> symptomArray = new ArrayList<>();
+
     String date;
     ParseQuery query;
 
@@ -62,8 +64,8 @@ public class Symptom_entry_list extends AppCompatActivity {
                             String dur = (String)dealsObject.get("Duration");
                             Integer delta = Integer.parseInt(dur);
 
-                            s = new Symptom(n,d,p,delta);
-
+                            s = new Symptom(n,d,p,delta, dealsObject.getObjectId(),date);
+                            symptomArray.add(s);
                             //Log.d("poop","Symptom Name: "+ n );
                             titlesArray.add(n);
 
@@ -87,11 +89,9 @@ public class Symptom_entry_list extends AppCompatActivity {
 //                            Toast.makeText(Symptom_entry_list.this,
 //                                    "List View Clicked:" + position, Toast.LENGTH_LONG)
 //                                    .show();
-                            Intent intent = new Intent(getApplicationContext(), Specific_Symptom_click.class);
-                            intent.putExtra("Symptom",s);
 
-                            startActivity(intent);
-
+                            s=symptomArray.get(position);
+                            switch_activity(s);
 
                         }
                     });
@@ -103,6 +103,15 @@ public class Symptom_entry_list extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void switch_activity(Symptom sick){
+
+     //concat string
+        //make second activity separate the result with commas.
+        Intent intent = new Intent(Symptom_entry_list.this, Specific_Symptom_click.class);
+        intent.putExtra("Symptom", sick.roll());
+        startActivity(intent);
     }
 
     @Override

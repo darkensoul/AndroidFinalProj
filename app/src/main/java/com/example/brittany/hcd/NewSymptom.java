@@ -14,9 +14,6 @@ import android.widget.Toast;
 
 import com.parse.ParseObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class NewSymptom extends AppCompatActivity {
     private SeekBar seekBar;
     private TextView painView;
@@ -80,7 +77,7 @@ public class NewSymptom extends AppCompatActivity {
             // Master Table
             Temp_Table item = new Temp_Table();
             item.setName("Issue: " + name.getText().toString()); // Symp name
-            item.setName2("Deets: " + description.getText().toString()); // Description
+            item.setName2("Details: " + description.getText().toString()); // Description
             item.setUsername(_username); // username
             item.setType("Symptom"); // Category
             item.saveInBackground();
