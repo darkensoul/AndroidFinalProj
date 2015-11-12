@@ -7,6 +7,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -40,8 +41,6 @@ public class Pushup_count extends AppCompatActivity implements SensorEventListen
     private SensorManager sensorManager;
     // Variables
     int counter = 0;
-//    int motivation = 0;
-//    int divideNumber = 0;
     int displayNumber = 0;
     int goal = 0;
     String proximityOut = "0";
@@ -66,7 +65,6 @@ public class Pushup_count extends AppCompatActivity implements SensorEventListen
         proximityView = (TextView) findViewById(R.id.textView_proximityView);
         courageView = (TextView) findViewById(R.id.textView_encourage); // change this view
 
-
         // Real sensor Manager
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),
@@ -79,9 +77,7 @@ public class Pushup_count extends AppCompatActivity implements SensorEventListen
         sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),
                 SensorManager.SENSOR_DELAY_GAME);
 
-        // Variables
-//        motivation = goal; // set as motivation
-//        divideNumber = motivation/pushit.length;
+        // Random generator
         generator = new Random(System.currentTimeMillis());
 
     }
@@ -96,7 +92,10 @@ public class Pushup_count extends AppCompatActivity implements SensorEventListen
         Intent intent5 = new Intent(this, Pushup_save.class);
         Bundle extras = new Bundle();
 
-        extras.putString("EXTRA_PUSHDONE",proximityOut);
+//        Log.i("Push up done:", proximityOut);
+//        Log.i("Push goal:", String.valueOf(goal));
+
+        extras.putString("EXTRA_PUSHDONE", proximityOut);
         extras.putInt("EXTRA_PUSHGOAL", goal);
 
         intent5.putExtras(extras);
@@ -117,10 +116,6 @@ public class Pushup_count extends AppCompatActivity implements SensorEventListen
 
         return super.onOptionsItemSelected(item);
     }
-
-    // int i,j = 0;
-    // if( (divideNumber == Integer.parseInt(proximityOut) )){courageView.setText(pushit[10]);}
-
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {

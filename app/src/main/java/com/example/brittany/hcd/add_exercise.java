@@ -158,7 +158,4 @@ public class add_exercise extends AppCompatActivity {
     }
 
 
-
-
-
 }
