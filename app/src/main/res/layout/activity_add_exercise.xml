@@ -119,7 +119,7 @@
             android:layout_marginLeft="20dp" />
 
         <EditText
-            android:layout_width="113dp"
+            android:layout_width="125dp"
             android:layout_height="50dp"
             android:inputType="number"
             android:ems="10"
@@ -130,7 +130,7 @@
             android:background="#ffffff"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:paddingLeft="-10dp" />
+            android:layout_marginLeft="-9dp" />
 
     </GridLayout>
     <GridLayout
@@ -158,7 +158,7 @@
             android:layout_marginLeft="20dp" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="108dp"
             android:layout_height="50dp"
             android:inputType="number"
             android:ems="10"

@@ -1,3 +1,9 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id ="@+id/scrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    >
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -40,7 +46,7 @@
 
     <Button
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:text="Symptoms"
         android:id="@+id/Symptoms"
         android:layout_weight="0.15"
@@ -55,7 +61,7 @@
     <Button
 
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:text="Workout"
         android:id="@+id/Workout"
         android:background="#1caeff"
@@ -65,30 +71,44 @@
         android:paddingLeft="-90dp"
         android:onClick="Workout_clicked"/>
 
+    <Button
+
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:text="Heart Rate"
+        android:id="@+id/HeartRate"
+        android:background="#ff3d30"
+        android:layout_weight="0.15"
+        android:textSize="12pt"
+        android:textColor="#ffffff"
+        android:paddingLeft="0dp"
+        android:onClick="Heartrate_clicked"
+        android:layout_marginTop="5dp" />
+
 
     <Button
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:text="Food"
         android:id="@+id/Food"
         android:layout_weight="0.15"
         android:textSize="12pt"
         android:textColor="#ffffff"
         android:background="#6372a4"
-        android:paddingLeft="-70dp"
+        android:paddingLeft="-30dp"
         android:onClick="Food_diary_clicked"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp" />
 
     <Button
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:text="Reports"
         android:id="@+id/Reports"
         android:layout_weight="0.15"
         android:textSize="12pt"
         android:textColor="#ffffff"
-        android:paddingLeft="30dp"
+        android:paddingLeft="50dp"
         android:nestedScrollingEnabled="true"
         android:background="#242283"
         android:onClick="Report_clicked"/>
@@ -96,7 +116,7 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:text="Logout"
         android:id="@+id/Logout"
         android:layout_weight="0.15"
@@ -108,4 +128,12 @@
         android:layout_marginTop="5dp"
         android:onClick="Logout_clicked"/>
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:id="@+id/textView13"
+        android:layout_marginTop="5dp"
+        android:background="#abd437" />
+
 </LinearLayout>
+</ScrollView>

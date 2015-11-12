@@ -6,34 +6,32 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-public class Position_pushup extends AppCompatActivity {
+public class Heartrate_details extends AppCompatActivity {
 
-    int goal  = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_position_pushup);
-
-
-        // Get the intent with the extra parameter
-        Intent intent = getIntent();
-        goal = intent.getIntExtra("parameter_name", 0);
+        setContentView(R.layout.activity_heartrate_details);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_position_pushup, menu);
+        getMenuInflater().inflate(R.menu.menu_heartrate_details, menu);
         return true;
     }
-    public void Counter_display_clicked(View view)
-    {
-        // Pass in the goal
-        Intent intent5 = new Intent(this, Pushup_count.class);
-        intent5.putExtra("parameter_name", goal);
 
-        startActivity(intent5);
+    public void Heartrate_info_click(View view)
+    {
+        Intent intent_Bioharness_info = new Intent(this, HeartRate_information.class);
+        startActivity(intent_Bioharness_info);
+
     }
+    public void Heartrate_calculate_click(View view) {
+    Intent intent_Bioharness_cal = new Intent(this, Heart_rate_monitor_firstscreen.class);
+    startActivity(intent_Bioharness_cal);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

@@ -80,6 +80,11 @@ public class UserMainPage extends AppCompatActivity {
         Intent intent_logout = new Intent(this, MainActivity.class);
         startActivity(intent_logout);
     }
+    public void Heartrate_clicked(View view)
+    {
+        Intent intent_heart =new Intent(this,Heartrate_details.class);
+        startActivity(intent_heart);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
