@@ -1,23 +1,23 @@
 package com.example.brittany.hcd;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.parse.ParseFile;
 import com.parse.ParseImageView;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class PageFragment extends ListFragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -74,11 +74,31 @@ public class PageFragment extends ListFragment {
                 public ParseQuery create(){
 
                     ParseQuery query = new ParseQuery("Temp_Table");
-                    query.whereEqualTo("Type", type); // Making Sure something equal something
-                    query.whereEqualTo("username",_username);
+                    query.whereEqualTo("Type", type); // Make sure inserts in correct category
+                    query.whereEqualTo("username",_username); // search login user
+
+                    query.orderByAscending("createdAt");
+
+                    // Today - Midnight; 00:00 is the first minute of the next day
+                    Calendar date = new GregorianCalendar();
+                    // reset hour, minutes, seconds and millis
+                    date.set(Calendar.HOUR_OF_DAY, 0);
+                    date.set(Calendar.MINUTE, 0);
+                    date.set(Calendar.SECOND, 0);
+                    date.set(Calendar.MILLISECOND, 0);
+                    Date midnight = date.getTime();
+
+                    // Today - Before Midnight; 23:59 is the last minute of the day
+                    date.set(Calendar.HOUR_OF_DAY, 23);
+                    date.set(Calendar.MINUTE, 59);
+                    date.set(Calendar.SECOND, 59);
+                    date.set(Calendar.MILLISECOND, 59);
+                    Date beforemidnight = date.getTime();
+                    query.whereGreaterThan("createdAt", midnight);
+                    query.whereLessThan("createdAt", beforemidnight);
 
 
-//            USE FOR LAST MONTH DATA - NOT TESTED
+//            USE FOR LAST MONTH DATA - IF want to change up report
 //
 //            // Today - Midnight; 00:00 is the first minute of the next day
 //            Calendar date = new GregorianCalendar();
@@ -102,16 +122,9 @@ public class PageFragment extends ListFragment {
 //            date.set(Calendar.SECOND, 59);
 //            date.set(Calendar.MILLISECOND, 59);
 //            Date lastdayMonth = date.getTime();
-//
-//
-//            try {
-//                query.whereGreaterThan("createdAt", firstdayMonth);
-//                query.whereLessThan("createdAt", lastdayMonth);
-//                ob = query.find();
-//            } catch (ParseException e) {
-//                Log.e("Error", e.getMessage());
-//                e.printStackTrace();
-//            }
+//            query.whereGreaterThan("createdAt", firstdayMonth);
+//            query.whereLessThan("createdAt", lastdayMonth);
+
 
                     return query;
                 }
@@ -149,13 +162,12 @@ public class PageFragment extends ListFragment {
                 }
             }
 
-            // CHANGE
-            TextView petName = (TextView)v.findViewById(R.id.Name);
-            petName.setText(item.getName());
+            TextView field = (TextView)v.findViewById(R.id.Name);
+            field.setText(item.getName());
 
 
-            TextView petBreed = (TextView)v.findViewById(R.id.Name2);
-            petBreed.setText(String.valueOf(item.getName2()));
+            TextView field2 = (TextView)v.findViewById(R.id.Name2);
+            field2.setText(String.valueOf(item.getName2()));
 
             return v;
         }

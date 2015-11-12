@@ -56,11 +56,7 @@ public class User_add_exercise extends AppCompatActivity {
         startActivity(intent6);
 
     }
-    public void Heartrate_clicked(View view)
-    {
-        Intent intent7 = new Intent(this, Heart_rate_monitor_firstscreen.class);
-        startActivity(intent7);
-    }
+
     public void create_new_routine(View view)
     {
         Intent intent_new_routine = new Intent(this, Workout_Main.class);

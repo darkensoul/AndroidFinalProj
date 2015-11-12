@@ -97,7 +97,7 @@ public class Workout_overview extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result) {
-            // Locate the listview in listview_main.xml
+            // Locate the listview in listview
             listview = (ListView) findViewById(R.id.listview);
             // Pass the results into an ArrayAdapter
             adapter = new ArrayAdapter<String>(Workout_overview.this,

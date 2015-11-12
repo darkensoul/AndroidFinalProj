@@ -1,5 +1,6 @@
 package com.example.brittany.hcd;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 //import android.support.design.widget.FloatingActionButton;
 //import android.support.design.widget.Snackbar;
@@ -64,15 +65,11 @@ public class heart_rate_display extends AppCompatActivity {
      * Called when the activity is first created.
      */
     BluetoothAdapter adapter = null;
-    BTClient _bt;
+    BTClient btdata;
     ZephyrProtocol _protocol;
-    NewConnectedListener _NConnListener;
+    NewConnectedListener ConnectionListener;
     private final int HEART_RATE = 0x100;
     private final int RESPIRATION_RATE = 0x101;
-    private final int SKIN_TEMPERATURE = 0x102;
-    private final int POSTURE = 0x103;
-    private final int PEAK_ACCLERATION = 0x104;
-
 
     private static GraphicalView view;
     private LineGraph line = new LineGraph();
@@ -101,34 +98,8 @@ public class heart_rate_display extends AppCompatActivity {
             btnConnect.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
 
-                //Line chart
-                /*    thread = new Thread()
-                    {
-                        public void run()
-                        {
-                            for(int i =0 ; i<10000;i++)
-                            {
-                                try {
-                                    Thread.sleep(2000);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-                                Point p = MockData.getDataFromReceiver(i);
-                                line.addNewPoints(p);
-                                view.repaint();
-                            }
-                        }        };
-                    thread.start();
-
-                    view = line.getView(heart_rate_display.this);
-                    //setContentView(view);
-                    LinearLayout layout =(LinearLayout) findViewById(R.id.linechart);
-                    layout.addView(view);*/
-
-
           //Bioharness
                     String BhMacID = "00:07:80:9D:8A:E8";
-                    //String BhMacID = "00:07:80:88:F6:BF";
                     adapter = BluetoothAdapter.getDefaultAdapter();
 
                     Set<BluetoothDevice> pairedDevices = adapter.getBondedDevices();
@@ -147,19 +118,19 @@ public class heart_rate_display extends AppCompatActivity {
                     //BhMacID = btDevice.getAddress();
                     BluetoothDevice Device = adapter.getRemoteDevice(BhMacID);
                     String DeviceName = Device.getName();
-                    _bt = new BTClient(adapter, BhMacID);
-                    _NConnListener = new NewConnectedListener(Newhandler, Newhandler);
-                    _bt.addConnectedEventListener(_NConnListener);
+                    btdata = new BTClient(adapter, BhMacID);
+                    ConnectionListener = new NewConnectedListener(Newhandler, Newhandler);
+                    btdata.addConnectedEventListener(ConnectionListener);
 
-                    TextView tv1 = (TextView) findViewById(R.id.labelHeartRate);
-                    tv1.setText("000");
+                    TextView HeartRate_text = (TextView) findViewById(R.id.labelHeartRate);
+                    HeartRate_text.setText("000");
 
-                    tv1 = (TextView) findViewById(R.id.labelRespRate);
-                    tv1.setText("0.0");
+                    HeartRate_text = (TextView) findViewById(R.id.labelRespRate);
+                    HeartRate_text.setText("0.0");
 
 
-                    if (_bt.IsConnected()) {
-                        _bt.start();
+                    if (btdata.IsConnected()) {
+                        btdata.start();
                         TextView tv = (TextView) findViewById(R.id.labelStatusMsg);
                         String ErrorText = "Connected to BioHarness " + DeviceName;
                         tv.setText(ErrorText);
@@ -211,23 +182,18 @@ public class heart_rate_display extends AppCompatActivity {
                     String ErrorText = "Disconnected from BioHarness!";
                     tv.setText(ErrorText);
 
-					/*This disconnects listener from acting on received messages*/
-                    _bt.removeConnectedEventListener(_NConnListener);
-					/*Close the communication with the device & throw an exception if failure*/
-                    _bt.Close();
+                    final ProgressDialog dig = new ProgressDialog(heart_rate_display.this);
+                    dig.setTitle("Disconnect BioHarness.");
+                    dig.setMessage("Disconnected from BioHarness!");
+                    dig.show();
+                    Toast.makeText(heart_rate_display.this,"Disconnected from BioHarness!",Toast.LENGTH_SHORT).show();
+                    Intent intent_Bioharness = new Intent(heart_rate_display.this, Heartrate_details.class);
+                    startActivity(intent_Bioharness);
 
                 }
             });
         }
     }
-    //@Override
-    //protected void onStart()
-    //{
-        //super.onStart();
-        //view = line.getView(this);
-        //setContentView(view);
-    //}
-
 
     private class BTBondReceiver extends BroadcastReceiver {
         @Override
@@ -279,7 +245,6 @@ public class heart_rate_display extends AppCompatActivity {
                 case HEART_RATE:
                     String HeartRatetext = msg.getData().getString("HeartRate");
                     tv = (TextView) findViewById(R.id.labelHeartRate);
-                    System.out.println("Heart Rate Info is " + HeartRatetext);
                     if (tv != null) tv.setText(HeartRatetext);
                     break;
 
