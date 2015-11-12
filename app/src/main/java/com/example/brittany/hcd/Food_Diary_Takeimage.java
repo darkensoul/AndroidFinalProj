@@ -125,6 +125,13 @@ public class Food_Diary_Takeimage extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+public void begin(View v){
+
+    Intent i = new Intent(Food_Diary_Takeimage.this, UserMainPage.class);
+    startActivity(i);
+
+}
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

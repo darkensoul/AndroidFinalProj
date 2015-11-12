@@ -49,7 +49,7 @@ public class Symptom_overview extends AppCompatActivity {
 
                         //format
                         DateFormat outputFormatter = new SimpleDateFormat("dd MMM yyyy");
-                        String output = outputFormatter.format(dealsObject.getCreatedAt()).toString();
+                        String output = outputFormatter.format(dealsObject.getCreatedAt());
 
                         if (!previous.equals(output)) {
 
